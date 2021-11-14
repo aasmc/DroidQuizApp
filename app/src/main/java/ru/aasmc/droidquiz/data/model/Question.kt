@@ -1,10 +1,11 @@
 package ru.aasmc.droidquiz.data.model
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 
-@Entity(tableName = "questions")
+@Entity(
+    tableName = "questions",
+    indices = [Index("question_id")]
+)
 data class Question(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "question_id")
