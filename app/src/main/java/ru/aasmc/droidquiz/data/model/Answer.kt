@@ -21,7 +21,7 @@ import androidx.room.*
     tableName = "answers",
     foreignKeys = [
         ForeignKey(
-            entity = Answer::class,
+            entity = Question::class,
             parentColumns = ["question_id"],
             childColumns = ["question_id"],
             onDelete = ForeignKey.CASCADE

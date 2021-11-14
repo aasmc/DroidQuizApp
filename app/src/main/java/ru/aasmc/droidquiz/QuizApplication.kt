@@ -9,7 +9,6 @@ class QuizApplication : Application() {
 
     companion object {
         lateinit var database: QuizDatabase
-            private set
     }
 
     override fun onCreate() {
