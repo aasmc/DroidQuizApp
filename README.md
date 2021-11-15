@@ -1,14 +1,46 @@
 # Educational App Droid Quiz
 
 This is an educational project aimed at learning concepts related to saving data on android devices
-using ORM Room. The app is based on chapters 7-11 of the book "Saving Data On Android" from 
+using ORM Room. The app is based on chapters 7-11 of the book "Saving Data On Android" from
 raywenderlich.com
 
 ## Functionality
-TODO
+
+A simple app that allows the user to answer some (in this case only 2) questions about IT. On first
+launch, the user needs to prepopulate the database of the app by selecting a corresponding menu in
+the app bar.
 
 ## Architecture
-TODO
+
+This app uses some of the Architecture Components:
+
+- ViewModel
+- LiveData
+- Room
+
+Main focus of the app is on implementing data storage by means of ORM Room. The app has an SQLLite
+database named quiz_database.db. It contains two tables:
+
+- Answer(answerId, questionId, isCorrect, text)
+- Question(questionId, text, difficulty)
+
+The tables have a relation of one-to-many: one question may contain many answers.
+
+The app exports database schema to the app/schemas directory. That is specified in build.gragle file
+
+```groovy
+    kapt {
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas".toString())
+    }
+}
+```
+
+The app has 4 migrations:
+- version 1 to 2
+- version 2 to 3
+- version 1 to 3
+- automigration from version 3 to 4
 
 ```text
 <!-- Copyright (c) 2019 Razeware LLC
