@@ -11,5 +11,6 @@ data class Question(
     @ColumnInfo(name = "question_id")
     val questionId: Int,
     @ColumnInfo(name = "text")
-    val text: String
+    val text: String,
+    val difficulty: Int = 0
 )
