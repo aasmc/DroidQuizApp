@@ -45,6 +45,14 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
 
+    def lifecycle_version = "2.4.0"
+    def arch_version = "2.1.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.arch.core:core-common:$arch_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-common:$lifecycle_version"
+
     testImplementation "junit:junit:$junit_version"
     testImplementation "androidx.room:room-testing:$room_version"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

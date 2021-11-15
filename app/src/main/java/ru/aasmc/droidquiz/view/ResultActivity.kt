@@ -3,6 +3,7 @@ package ru.aasmc.droidquiz.view
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import ru.aasmc.droidquiz.R
 import ru.aasmc.droidquiz.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
@@ -16,6 +17,10 @@ class ResultActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.playButton.setOnClickListener { playAgain() }
+
+        val score = intent.extras?.getInt(QuestionActivity.SCORE)
+        val numberOfQuestions = intent.extras?.getInt(QuestionActivity.NUMBER_OF_QUESTIONS)
+        binding.scoreTextView.text = String.format(getString(R.string.score_message), score, numberOfQuestions)
     }
 
     private fun playAgain() {
