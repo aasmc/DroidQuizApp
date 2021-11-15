@@ -18,7 +18,10 @@ class QuizApplication : Application() {
             QuizDatabase::class.java,
             DB_NAME
         )
-            .addMigrations(QuizDatabase.MIGRATION_1_TO_2)
+            .addMigrations(
+                QuizDatabase.MIGRATION_1_TO_2,
+                QuizDatabase.MIGRATION_2_TO_3
+            )
             .build()
     }
 }
