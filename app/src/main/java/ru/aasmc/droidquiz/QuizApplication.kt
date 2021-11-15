@@ -20,7 +20,8 @@ class QuizApplication : Application() {
         )
             .addMigrations(
                 QuizDatabase.MIGRATION_1_TO_2,
-                QuizDatabase.MIGRATION_2_TO_3
+                QuizDatabase.MIGRATION_2_TO_3,
+                QuizDatabase.MIGRATION_1_TO_3
             )
             .build()
     }
